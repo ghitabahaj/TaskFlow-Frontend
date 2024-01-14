@@ -1,27 +1,25 @@
-import { NgModule, isDevMode } from '@angular/core';
+import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { StoreModule } from '@ngrx/store';
-import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+import { UserComponent } from './pages/user/user.component';
+import { TaskComponent } from './pages/task/task.component';
+import { HomeComponent } from './pages/home/home.component';
 import { EffectsModule } from '@ngrx/effects';
-import { HomePageComponent } from './components/home-page/home-page.component';
-import { NavbarComponent } from './components/navbar/navbar.component';
-import { TaskComponent } from './components/task/task.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    HomePageComponent,
-    NavbarComponent,
-    TaskComponent
+    UserComponent,
+    TaskComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     StoreModule.forRoot({}, {}),
-    StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: !isDevMode() }),
     EffectsModule.forRoot([])
   ],
   providers: [],
