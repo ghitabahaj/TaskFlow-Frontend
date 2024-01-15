@@ -13,10 +13,17 @@ export class TaskService {
   constructor(private http: HttpClient) {}
 
   getAllTasks(): Observable<Task[]> {
-    return this.http.get<Task[]>(this.apiUrl + '/tasks');
+    const url = `${this.apiUrl}/tasks/all`;
+    return this.http.get<Task[]>(url);
   }
 
-  createTask(task: Task): Observable<string> {
-    return this.http.post<string>(this.apiUrl, task);
+  createTask(task: Task, userId: number, tagNames: string[]): Observable<Task> {
+    const url = `${this.apiUrl}/tasks/create`;
+    const body = {
+      task: task,
+      userId: userId,
+      tagNames: tagNames
+    };
+    return this.http.post<Task>(url, body);
   }
 }

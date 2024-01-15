@@ -26,8 +26,8 @@
     </div>
   
     <div class="mb-3">
-      <label for="dueDate" class="form-label">Due Date:</label>
-      <input type="date" id="dueDate" name="dueDate" [(ngModel)]="newTask.dueDate" class="form-control" required>
+      <label for="dueDate" class="form-label">End Date:</label>
+      <input type="date" id="dueDate" name="dueDate" [(ngModel)]="newTask.endDate" class="form-control" required>
     </div>
   
     <!-- Additional Form Fields based on Task Model -->
@@ -40,6 +40,13 @@
       <label for="assignedTo" class="form-label">Assigned To:</label>
       <input type="text" id="assignedTo" name="assignedTo" [(ngModel)]="newTask.assignedTo" class="form-control" required>
     </div>
+
+    <label for="tags">Tags:</label>
+    <input type="text" id="tags" formControlName="tags" [(ngModel)]="tags">
+  
+    <!-- User ID -->
+    <label for="userId">User ID:</label>
+    <input type="number" id="userId" formControlName="userId" [(ngModel)]="userId">
   
     <!-- Add more form fields based on your Task model -->
   

@@ -3,7 +3,7 @@
 <div *ngIf="loading$ | async" class="alert alert-info">Loading...</div>
 <div *ngIf="error$ | async as error" class="alert alert-danger">{{ error }}</div>
 <a class="btn btn-primary mt-3" routerLink="form">Create New Task</a>
-<div class="d-flex">vc
+<div class="d-flex">
   <div class="flex-fill">
     <h4 class="mt-3 mb-3">In Progress</h4>
     <ul *ngIf="(tasks$ | async) as tasks" class="list-group">

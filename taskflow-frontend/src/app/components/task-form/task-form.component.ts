@@ -16,7 +16,7 @@ export class TaskFormComponent {
     description: '',
     priority: 'HIGH',
     startDate: '',
-    dueDate: '',
+    endDate: '',
     createdBy: null!,
     assignedTo: null!,
     status: 'IN_PROGRESS',
@@ -24,11 +24,15 @@ export class TaskFormComponent {
     tokenDemands: []
   };
 
+
   constructor(private taskService: TaskService) {}
 
   createNewTask(form: any): void {
+    const userId: number =this.userId;
+    const tagNames: string[] = this.tags;
+
     if (form.valid) {
-      this.taskService.createTask(this.newTask).subscribe(
+      this.taskService.createTask(this.newTask, userId, tagNames).subscribe(
         response => {
           console.log('Task created successfully:', response);
           form.resetForm();
@@ -38,7 +42,7 @@ export class TaskFormComponent {
             description: '',
             priority: 'HIGH',
             startDate: '',
-            dueDate: '',
+            endDate: '',
             createdBy: null!,
             assignedTo: null!,
             status: 'IN_PROGRESS',
