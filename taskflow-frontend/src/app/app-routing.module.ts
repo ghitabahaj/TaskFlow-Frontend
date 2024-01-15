@@ -1,10 +1,16 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { HomeComponent } from './pages/home/home.component';
+import { HomePageComponent } from './components/home-page/home-page.component';
+import { TaskComponent } from './components/task/task.component';
+import { TaskFormComponent } from './components/task-form/task-form.component';
+
 
 const routes: Routes = [
-  { path: '', component: HomeComponent  },
-  { path: 'task', loadChildren: () => import("./pages/task/task.module").then(m => m.TaskModule)}
+  { path: '', component: HomePageComponent },
+  { path: 'tasks', component: TaskComponent },
+  { path: '**', redirectTo: '', pathMatch: 'full' },
+  { path: 'form', component: TaskFormComponent }
+
 ];
 
 @NgModule({

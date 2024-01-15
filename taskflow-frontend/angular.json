@@ -3,13 +3,9 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "TaskFlowFrontEnd": {
+    "taskflow-frontend": {
       "projectType": "application",
-      "schematics": {
-        "@schematics/angular:component": {
-          "style": "scss"
-        }
-      },
+      "schematics": {},
       "root": "",
       "sourceRoot": "src",
       "prefix": "app",
@@ -17,26 +13,21 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/task-flow-front-end",
+            "outputPath": "dist/taskflow-frontend",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": [
               "zone.js"
             ],
             "tsConfig": "tsconfig.app.json",
-            "inlineStyleLanguage": "scss",
             "assets": [
               "src/favicon.ico",
               "src/assets"
             ],
             "styles": [
-              "node_modules/bootstrap/scss/bootstrap.scss",
-              "node_modules/bootstrap-icons/font/bootstrap-icons.css",
-              "src/styles.scss"
+              "src/styles.css"
             ],
-            "scripts": [
-              "node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"
-            ]
+            "scripts": []
           },
           "configurations": {
             "production": {
@@ -69,10 +60,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "TaskFlowFrontEnd:build:production"
+              "browserTarget": "taskflow-frontend:build:production"
             },
             "development": {
-              "buildTarget": "TaskFlowFrontEnd:build:development"
+              "browserTarget": "taskflow-frontend:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -80,7 +71,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "buildTarget": "TaskFlowFrontEnd:build"
+            "browserTarget": "taskflow-frontend:build"
           }
         },
         "test": {
@@ -91,13 +82,12 @@
               "zone.js/testing"
             ],
             "tsConfig": "tsconfig.spec.json",
-            "inlineStyleLanguage": "scss",
             "assets": [
               "src/favicon.ico",
               "src/assets"
             ],
             "styles": [
-              "src/styles.scss"
+              "src/styles.css"
             ],
             "scripts": []
           }
@@ -106,6 +96,6 @@
     }
   },
   "cli": {
-    "analytics": "f19534bc-c772-40fb-9b1a-8aa5d357092d"
+    "analytics": "a2bc1323-43f3-48c3-bfad-ce25bd2c792f"
   }
 }

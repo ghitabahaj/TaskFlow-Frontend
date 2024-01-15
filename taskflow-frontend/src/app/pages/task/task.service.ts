@@ -25,7 +25,7 @@ export class TaskService {
   }
 
   getAllTasks(): Observable<TaskDTO[]> {
-    return this.http.get<TaskDTO[]>(`${this.baseUrl}`);
+    return this.http.get<TaskDTO[]>(`${this.baseUrl}/all`);
   }
 
   getTaskById(taskId: number): Observable<TaskDTO> {
