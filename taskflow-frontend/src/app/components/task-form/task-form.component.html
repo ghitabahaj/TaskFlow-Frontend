@@ -33,12 +33,12 @@
     <!-- Additional Form Fields based on Task Model -->
     <div class="mb-3">
       <label for="createdBy" class="form-label">Created By:</label>
-      <input type="text" id="createdBy" name="createdBy" [(ngModel)]="newTask.createdBy" class="form-control" required>
+      <input type="text" id="createdBy" name="createdBy" [(ngModel)]="newTask.createdByUserId" class="form-control" required>
     </div>
   
     <div class="mb-3">
       <label for="assignedTo" class="form-label">Assigned To:</label>
-      <input type="text" id="assignedTo" name="assignedTo" [(ngModel)]="newTask.assignedTo" class="form-control" required>
+      <input type="text" id="assignedTo" name="assignedTo" [(ngModel)]="newTask.assignedToUserId" class="form-control" required>
     </div>
   
     <!-- Add more form fields based on your Task model -->

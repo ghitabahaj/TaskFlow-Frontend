@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule, isDevMode } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http'; // Import HttpClientModule
 
@@ -32,7 +32,8 @@ import { FormsModule } from '@angular/forms';
     StoreModule.forRoot({ tasks: taskReducer }),
     StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: false }),
     FormsModule,
-    EffectsModule.forRoot([TaskEffects])
+    EffectsModule.forRoot([TaskEffects]),
+    StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: !isDevMode() })
     
   ],
   providers: [],

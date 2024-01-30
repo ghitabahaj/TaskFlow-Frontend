@@ -17,10 +17,10 @@ export class TaskFormComponent {
     priority: 'HIGH',
     startDate: '',
     dueDate: '',
-    createdBy: null!,
-    assignedTo: null!,
+    createdByUserId: null!,
+    assignedToUserId: null!,
     status: 'IN_PROGRESS',
-    tags: [],
+    tagIds: [],
     tokenDemands: []
   };
 
@@ -39,10 +39,10 @@ export class TaskFormComponent {
             priority: 'HIGH',
             startDate: '',
             dueDate: '',
-            createdBy: null!,
-            assignedTo: null!,
+            createdByUserId: null!,
+            assignedToUserId: null!,
             status: 'IN_PROGRESS',
-            tags: [],
+            tagIds: [],
             tokenDemands: []
           };
         },

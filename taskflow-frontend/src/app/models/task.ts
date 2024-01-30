@@ -9,9 +9,9 @@ export interface Task {
     priority: string;
     startDate: string;
     dueDate: string;
-    createdBy: User;
-    assignedTo: User;
+    createdByUserId: number;
+    assignedToUserId: Number;
     status: string;
-    tags: Tag[];
+    tagIds: Number[];
     tokenDemands: TokenDemand[];
 }
